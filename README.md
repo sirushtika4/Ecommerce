@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # E-Commerce GUI Project
 
 A Vue 3 Single Page Application for browsing and viewing products from the DummyJSON API.
@@ -81,3 +82,6 @@ src/
 ## API
 
 The application fetches data from [DummyJSON Products API](https://dummyjson.com/products).
+=======
+# Ecommerce
+>>>>>>> 0916b3f57ebf40dec30a84c619f46ed55aa36e9c
