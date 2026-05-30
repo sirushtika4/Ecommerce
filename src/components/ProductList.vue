@@ -1,14 +1,12 @@
 <template>
-  <div class="container mx-auto px-4 py-8">
-    <div class="mb-8">
-      <div class="rounded-3xl border border-slate-200/80 bg-white/95 dark:border-slate-800 dark:bg-slate-950/95 shadow-sm p-6">
-        <div class="mb-6">
-          <h2 class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400 mb-3">Filter Products</h2>
-          <h1 class="text-4xl font-bold text-slate-900 dark:text-slate-100">Product Catalog</h1>
-          <p class="text-slate-600 dark:text-slate-400 mt-2">Explore our premium collection</p>
-        </div>
-        <SearchBar v-model:searchQuery="searchQuery" @update:category="selectedCategory = $event" />
+  <div class="space-y-8">
+    <div class="rounded-3xl border border-slate-200/80 bg-white/95 dark:border-slate-800 dark:bg-slate-950/95 shadow-sm p-6">
+      <div class="mb-6">
+        <h2 class="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400 mb-3">Filter Products</h2>
+        <h1 class="text-4xl font-bold text-slate-900 dark:text-slate-100">Product Catalog</h1>
+        <p class="text-slate-600 dark:text-slate-400 mt-2">Explore our premium collection</p>
       </div>
+      <SearchBar v-model:searchQuery="searchQuery" @update:category="selectedCategory = $event" />
     </div>
     <div v-if="loading" class="text-center py-16">
       <div class="inline-block">

@@ -41,6 +41,26 @@ export const useCartStore = defineStore('cart', () => {
     }
   };
 
+  const incrementQuantity = (productId: number) => {
+    const item = items.value.find(cartItem => cartItem.product.id === productId);
+    if (item) {
+      item.quantity++;
+      saveToLocalStorage();
+    }
+  };
+
+  const decrementQuantity = (productId: number) => {
+    const index = items.value.findIndex(cartItem => cartItem.product.id === productId);
+    if (index > -1) {
+      const item = items.value[index];
+      item.quantity--;
+      if (item.quantity <= 0) {
+        items.value.splice(index, 1);
+      }
+      saveToLocalStorage();
+    }
+  };
+
   const clearCart = () => {
     items.value = [];
     saveToLocalStorage();
@@ -68,6 +88,8 @@ export const useCartStore = defineStore('cart', () => {
     totalPrice,
     addToCart,
     removeFromCart,
+    incrementQuantity,
+    decrementQuantity,
     clearCart,
   };
 });
